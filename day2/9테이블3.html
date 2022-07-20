@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>Day2_표3</title>
+    <style>
+        table,td,th {
+            padding: 10px;
+            border: 1.5px solid gray;
+            border-collapse: collapse;
+            height: 80px;
+            margin: auto;
+            table-layout: fixed;
+        }
+
+        h3 {
+            text-align: left;
+            margin-left: 21%;
+            font-size: 30px;
+        }
+
+        #title {
+            font-size: 20px;
+            color: cornflowerblue;
+            background-color: lavender;
+        }
+
+        td {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <!-- 1) 칸 합치기 colspan, rowspan 연습 
+    https://www.w3schools.com/html/html_table_colspan_rowspan.asp
+    2) 시간표 작성하기 : colspan, rowsapn 활용 -> 구글 폴더에 올리기
+    -->
+    <h3>⏰시간표</h3>
+    <table style="width: 60%;">
+        <th id="title" colspan="6">2022학년도 1학기 시간표</th>
+        <tr>
+            <th>구분</th>
+            <th>월</th>
+            <th>화</th>
+            <th>수</th>
+            <th>목</th>
+            <th>금</th>
+        </tr>
+            <th>1교시</th>
+            <td rowspan="2" style="background-color: lightskyblue;">C언어</td>
+            <td></td>
+            <td rowspan="3" style="background-color: lightcoral;">C++프로그래밍</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>2교시</th>
+            <td></td>
+            <td rowspan="2" style="background-color: lightsalmon;">의사소통능력</td>
+            <td rowspan="2" style="background-color: lightpink;">HTML & CSS</td>
+        </tr>
+        <tr>
+            <th>3교시</th>
+            <td style="background-color: lightgoldenrodyellow;">데이터베이스설계</td>
+            <td rowspan="2" style="background-color: lightgreen;">리눅스서버구축</td>
+        </tr>
+        <tr>
+            <th>4교시</th>
+            <td></td>
+            <td style="background-color: lightgreen;">리눅스서버구축</td>
+            <td></td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>5교시</th>
+            <td></td>
+            <td rowspan="3" style="background-color: lightskyblue;">C언어</td>
+            <td></td>
+            <td rowspan="3" style="background-color: lightseagreen;">창의적공학설계</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>6교시</th>
+            <td></td>
+            <td style="background-color: lightpink;">HTML & CSS</td>
+            <td></td>
+        </tr>
+        <tr>
+            <th>7교시</th>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+</body>
+</html>
