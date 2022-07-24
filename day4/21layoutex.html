@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Day4_레이아웃예제</title>
+    <link rel="shortcut icon" href="../images/hanrabong.ico" type="image/x-icon">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Song+Myung&display=swap');
+
+        * {
+            box-sizing: border-box;
+            font-family: 'Song Myung', serif;
+        } 
+        /* box-model의 크기 = width + padding*2 + border - width*2 
+           box-sizing: border-box; 은 width 설정되는 값이 padding, 테두리를 포함 */
+      
+        body {
+            font-family: Arial;
+            padding: 10px;
+            background-color: rgb(225, 255, 235);
+        }
+      
+        /* Header/Blog Title */
+        header {
+            padding: 30px;
+            text-align: center;
+            background-color: white;
+        }
+      
+        h1 {
+            font-size: 50px;
+        }
+      
+        /* Style the top navigation bar */
+        nav {
+            overflow: hidden;
+            background-color: coral;
+        }
+
+        ul {
+            list-style: none;
+            margin: auto;
+            margin-left: -40px;
+        }
+
+        ul > li {
+            float: left;
+        }
+        
+        /* Style the topnav links */
+        ul > li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+      
+        /* Change color on hover */
+        ul > li a:hover {
+            background-color: white;
+            color: black;
+        }
+
+        ul > li:last-child {
+            float: right;
+        }
+      
+        /* Create two unequal columns that floats next to each other */
+        /* Left column */
+        .leftcolumn {   
+            float: left;
+            width: 75%;
+        }
+      
+        /* Right column */
+        .rightcolumn {
+            float: left;
+            width: 25%;
+            background-color: rgb(225, 255, 235);
+            padding-left: 20px;
+        }
+      
+        /* Fake image */
+        .fakeimg img{
+            background-color: lemonchiffon;
+            width: 100%;
+            padding: 20px;
+            object-fit: cover;
+        }
+      
+        /* Add a card effect for articles */
+        .card {
+            background-color: white;
+            padding: 20px;
+            margin-top: 20px;
+        }
+      
+        /* Clear floats after the columns : pseudo 요소는 ::after, ::before */
+        main:after {
+            content: "";
+            display: table;
+            clear: both; /* float:left를 클리어 */
+        }
+      
+        /* Footer */
+        footer {
+            padding: 20px;
+            text-align: center;
+            background-color: rgb(170, 241, 255);
+            margin-top: 20px;
+        }
+      
+        /* Responsive layout : 반응형
+        반응형 레이아웃 : flexbox
+        - when the screen is less than 800px wide, make the two columns stack on top of each other instead of next to each other 
+        너비가 0 ~ 800px는 아래의 스타일을 적용 */
+        @media screen and (max-width: 800px) {
+            .leftcolumn, .rightcolumn {   
+            width: 100%;
+            padding: 0;
+            }
+        }
+        
+        /* Responsive layout - when the screen is less than 400px wide, make the navigation links stack on top of each other instead of next to each other 
+        너비가 0 ~ 400px는 아래의 스타일을 적용 */
+        @media screen and (max-width: 400px) {
+            ul > li a {
+            float: none;
+            width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Jeju Island</h1>
+        <p>To travel is to live.</p>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="https://ko.wikipedia.org/wiki/%EC%A0%9C%EC%A3%BC%EB%8F%84">JEJU</a></li>
+            <li><a href="https://www.google.com/travel/things-to-do?g2lb=2502548,2503771,2503781,4258168,4270442,4284970,4291517,4306835,4515404,4597339,4703207,4718358,4722900,4723331,4741665,4757164,4758493,4762561,4786958,4790928,4794648,4806994,4814050,4816255&hl=ko-KR&gl=kr&ssta=1&dest_mid=/m/01rffr&dest_state_type=main&dest_src=ts&sa=X&ved=2ahUKEwjIjqXu_Yn5AhUdqFYBHUWADQ8QuL0BegQIDBAy">TOUR</a></li>
+            <li><a href="https://www.visitjeju.net/kr/jejuStory/luxury_jeju?tap=teugsan&menuId=DOM_000002700000000003">SPECIALITY</a></li>
+            <li><a href="https://www.jejuair.net/ko/main/base/index.do" style="float:right">JEJU AIR</a></li>
+        </ul>
+    </nav>
+    <main>
+        <div class="leftcolumn">
+            <div class="card">
+                <h2>Jeju</h2>
+                <h5>제주도, Jul 21, 2022</h5>
+                <div class="fakeimg" style="height: 500px;">
+                    <img src="../images/jejuisland.jpg" alt="jeju" width="300px" height="480px">
+                </div>
+                <p>제주도</p>
+                <p>제주도(濟州島, 영어: Jeju-do)는 대한민국의 남해에 위치한 섬이자 대한민국에서 가장 큰 섬이다.<br>
+                   또한 제주도는 행정구역상 제주특별자치도에 속한다. 섬의 면적은 1833.2 km2인데 이는 남한 면적의 1.83%에 해당한다.</p>
+            </div>
+            <div class="card">
+                <h2>Jeju Tangerine</h2>
+                <h5>제주 감귤, Jul 21, 2022</h5>
+                <div class="fakeimg" style="height: 613px;">
+                    <img src="../images/jeju2.jpg" alt="tangerine" width="300px" height="593px">
+                </div>
+                <p>제주 감귤</p>
+                <p>제주감귤(濟州柑橘)은 제주도의 특산물로 씨가 없으며 손으로 껍질을 벗기기가 쉽고,<br> 
+                   비타민C, 단백질, 당질, 칼슘, 인, 비타민 등 다양한 영양소가 듬뿍 들어 있어 세계적으로 훌륭한 과일로 꼽힌다.</p>
+            </div>
+        </div>
+        <div class="rightcolumn">
+            <div class="card">
+                <h2>About Jeju..</h2>
+                <div class="fakeimg" style="height: 300px;">
+                    <img src="../images/jeju1.jpg" alt="jeju" width="300px" height="280px">
+                </div>
+            </div>
+            <div class="card">
+                <h3>Popular Post</h3>
+                <div class="fakeimg"><p>
+                    Rape Flower<img src="../images/jeju4.jpeg" alt="flower" width="300px" height="280px">
+                </p></div>
+                <div class="fakeimg"><p>
+                    Jeju stone<img src="../images/jeju3.jpg" alt="stone" width="300px" height="280px">
+                </p></div>
+                <div class="fakeimg"><p>
+                    Dolhareubang<img src="../images/dolharuebang.jpg" alt="dolhareubang" width="300px" height="280px">
+                </p></div>
+            </div>
+            <div class="card">
+                <h3>Follow Me</h3>
+                <p>Some text..</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>Copyright © 2022 Jeju Island</p>
+    </footer>
+</body>
+</html>

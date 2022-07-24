@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>hrdform</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+        * {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        body {
+            width: 100%;
+            background-color: lightgray;
+        }
+
+        .header {
+            background-color: royalblue;
+            color: white;
+            padding: 40px 20px;
+            margin-left: -10px;
+            margin-top: -20px;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            background-color: mediumpurple;
+            overflow: hidden;
+            margin: auto;
+            margin-left: -10px;
+        }
+
+        ul > li {
+            float: left;
+        }
+
+        ul > li a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        ul > li a:hover {
+            background-color: cornflowerblue;
+            color: white;
+        }
+
+        table, td {
+            border: 1px solid gray;
+            height: 30px;
+            margin: auto;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        td.title {
+            text-align: center;
+            font-weight: bold;
+            width: 300px;
+        }
+
+        td.input {
+            text-align: left;
+            width: 400px;
+        }
+
+        td.bt {
+            text-align: center;
+        }
+
+        button {
+            width: 70px;
+            height: 30px;
+            letter-spacing: 5px;
+            background-color: lightgray;
+            border: 0.5px solid;
+            background: linear-gradient( to bottom, white, lightgray);
+            font-weight: bold;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h3 style="text-align: center">홈쇼핑 회원관리 ver 1.0</h3>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="">회원등록</a></li>
+            <li><a href="">회원목록조회</a></li>
+            <li><a href="">회원매출조회</a></li>
+            <li><a href="">홈으로.</a></li>
+        </ul>
+    </div>
+    <h3>홈쇼핑 회원 등록</h3>
+        <table style="width: 50%;">
+            <tr>
+                <td class="title">회원번호(자동발생)</td>
+                <td class="input"><input style="width: 110px; height: 20px;" type="text" name="num"></td>
+            </tr>
+            <tr>
+                <td class="title">회원성명</td>
+                <td class="input"><input style="width: 110px; height: 20px;" type="text" name="name"></td>
+            </tr>
+            <tr>
+                <td class="title">회원전화</td>
+                <td class="input"><input style="width: 180px; height: 20px;" type="text" name="hp"></td>
+            </tr>
+            <tr>
+                <td class="title">회원주소</td>
+                <td class="input"><input style="width: 250px; height: 20px;" type="text" name="addr"></td>
+            </tr>
+            <tr>
+                <td class="title">가입일자</td>
+                <td class="input"><input style="width: 110px; height: 20px;" type="text" name="date"></td>
+            </tr>
+            <tr>
+                <td class="title">고객등급[A:VIP,B:일반,C:직원]</td>
+                <td class="input"><input style="width: 110px; height: 20px;" type="text" name="cr"></td>
+            </tr>
+            <tr>
+                <td class="title">도시코드</td>
+                <td class="input"><input style="width: 110px; height: 20px;" type="text" name="cc"></td>
+            </tr>
+            <tr>
+                <td colspan="2" class="bt">
+                    <button>등록</button>
+                    <button>조회</button>
+                </td>
+            </tr>
+        </table>
+</body>
+</html>

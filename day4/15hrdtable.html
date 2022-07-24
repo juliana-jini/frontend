@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>hrdtable</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap');
+
+        * {
+            font-family: 'Nanum Myeongjo', serif;
+        }
+
+        body {
+            width: 100%;
+            background-color: lightgray;
+        }
+
+        .header {
+            background-color: royalblue;
+            color: white;
+            padding: 40px 20px;
+            margin-left: -10px;
+            margin-top: -20px;
+        }
+
+        h3 {
+            text-align: center;
+        }
+
+        ul {
+            list-style: none;
+            background-color: mediumpurple;
+            overflow: hidden;
+            margin: auto;
+            margin-left: -10px;
+        }
+
+        ul > li {
+            float: left;
+        }
+
+        ul > li a {
+            display: block;
+            color: white;
+            padding: 14px 16px;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        ul > li a:hover {
+            background-color: cornflowerblue;
+            color: white;
+        }
+        
+        table, td, th {
+            border: 1px solid gray;
+            height: 30px;
+            margin: auto;
+        }
+
+        h3 {
+            text-align: center;
+            font-size: 20px;
+            padding: 10px;
+        }
+
+        td {
+            text-align: center;
+        }
+
+        .num {
+            color: white;
+        }
+</style>
+</head>
+<body>
+    <div class="header">
+        <h3 style="text-align: center">홈쇼핑 회원관리 ver 1.0</h3>
+    </div>
+    <div class="nav">
+        <ul>
+            <li><a href="">회원등록</a></li>
+            <li><a href="">회원목록조회</a></li>
+            <li><a href="">회원매출조회</a></li>
+            <li><a href="">홈으로.</a></li>
+        </ul>
+    </div>
+    <h3>회원목록조회/수정</h3>
+        <table style="width: 80%;">
+            <tr>
+                <th>회원번호</th>
+                <th>회원성명</th>
+                <th>전화번호</th>
+                <th>주소</th>
+                <th>가입일자</th>
+                <th>고객등급</th>
+                <th>거주지역</th>
+            </tr>
+            <tr>
+                <td class="num">100001</td>
+                <td>김행복</td>
+                <td>010-1111-2222</td>
+                <td>서울 동대문구 휘경동</td>
+                <td>2015-12-02</td>
+                <td>VIP</td>
+                <td>01</td>
+            </tr>
+            <tr>
+                <td class="num">100002</td>
+                <td>이축복</td>
+                <td>010-1111-3333</td>
+                <td>서울 동대문구 휘경동</td>
+                <td>2015-12-06</td>
+                <td>일반</td>
+                <td>01</td>
+            </tr>
+            <tr>
+                <td class="num">100003</td>
+                <td>장믿음</td>
+                <td>010-1111-4444</td>
+                <td>울릉군 울릉읍 독도1리</td>
+                <td>2015-10-01</td>
+                <td>일반</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td class="num">100004</td>
+                <td>최사랑</td>
+                <td>010-1111-5555</td>
+                <td>울릉군 울릉읍 독도2리</td>
+                <td>2015-11-13</td>
+                <td>VIP</td>
+                <td>30</td>
+            </tr>
+            <tr>
+                <td class="num">100005</td>
+                <td>진평화</td>
+                <td>010-1111-6666</td>
+                <td>제주도 제주시 감나무골</td>
+                <td>2015-12-25</td>
+                <td>일반</td>
+                <td>60</td>
+            </tr>
+            <tr>
+                <td class="num">100006</td>
+                <td>차공단</td>
+                <td>010-1111-7777</td>
+                <td>제주도 제주시 외나무골</td>
+                <td>2015-12-11</td>
+                <td>직원</td>
+                <td>60</td>
+            </tr>
+        </table>
+</body>
+</html>
