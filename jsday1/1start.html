@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsday1</title>
+    <style>
+        #output {
+            /* p 태그 요소가 화면에서 안보입니다. */
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <h3>환영합니다! 자바스크립트</h3>
+    <hr>
+    <!-- 자바스크립트 실행은 순차적인 흐름에 따릅니다. -->
+    <script>
+        // 자바스크립트에서는 html 문서를 지정할 때 document 객체를 사용합니다.
+        document.write('My name is 홍길동');    // 세미콜론 생략가능
+    // alert('나이를 알려주세요');                 // 알림상자
+    // 자바스크립트 대화상자 함수 : alert(알림), prompt(1개 사용자 입력), confirm(확인/취소 버튼)
+    </script>
+    <!-- 따옴표 안에 따옴표는 서로 다른 종류로 사용하기. -->
+    <button onclick="alert('지역을 알려주세요.')">추가정보1</button>
+    <script>
+        document.write('*****');
+        // 자바스크립트 출력과 html 태그는 순서로 브라우저에 출력.
+        // 찾는 요소 id = 'animal'이 현재 위치보다 뒤에 있으면 오류
+        // document.getElementById('animal').innerHTML = 'ooo';
+        function your_info() {
+            // 변수선언 var : 데이터 형식 따로 구분하지 않음.
+            //             : 자바스크립트는 선언하지 않고도 변수를 사용할 수 있음.
+            var your_animal;
+            your_animal = prompt('당신의 반려동물 이름은 ?')    // 취소 : null
+            console.log(your_animal)
+            var yn
+            yn = confirm(your_animal + ' 맞습니까?')
+            console.log(yn)     // 확인 : true, 취소 : false
+            // 요소 : 여는 태그, 닫는 태그, 그 사이의 내용
+            // innerHTML 속성은 태그의 내용을 지정(변경)합니다.
+            document.getElementById('animal').innerHTML = your_animal;
+            // 자바스크립트로 style 변경
+            document.getElementById('output').style.display = 'block';
+        }
+    </script>
+    <button onclick="console.log('추가정보2 버튼입니다.')">추가정보2</button>
+    <button onclick="your_info()">추가정보3</button>
+    <!-- button이 from태그 없이 단독으로 사용할 때 onclick 이벤트 속성 작성합니다. 
+         onclick 이벤트 속성값은 자바스크립트 명령 또는 함수    
+    -->
+    <p id="output">
+        당신의 반려동물은 <span id="animal">???</span> 이군요...
+    </p>
+    <script>
+        document.getElementById('animal').innerHTML = 'ooo';
+    </script>
+
+
+
+
+</body>
+</html>
+
+
+<!-- 자바스크립트
+    자바스크립트 javascript : 웹브라우저에서 실행되는 언어입니다.(HTML문서 안에서 작성되어야 합니다.)
+          컴파일(파일단위로 번역)과정이 없고 명령을 하나씩 번역(인터프리터언어)하는 형식(script)
+          199X 년도에 네스케이프 브라우저에서 개발 -> 구글에서 발전시킴.(표준화,규격화)-> 많이 쓰이고 있음.
+          node.js 프로그램 : 웹브라우저 없이 자바스크립트를 실행할 수 있음.
+          기본형식 : 1) script 태그안에서 작성                   2) html 태그의 속성에서 작성(onclick 이벤트)
+                        ㄴ 위치는 상관없음.별도파일에도 작성함.
+          문법참고 : https://www.w3schools.com/js/default.asp              
+          *자바의 객체개념. 자바의 객체에 포함된 메소드 또는 속성(전역변수) 에 대한 개념이 동일하게 적용됩니다.
+          location.href 는 location 객체의 href 속성입니다.
+    -->

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    'use strict'    // -> 2)번 오류가 안나는 것을 오류가 발생하도록 합니다.
+        var v1 = 456;
+        document.write(v1);
+        document.write('<br>')
+        var v1 = 999        // 1) c, java.. 등 다른 언어에서는 오류 - 중복된 선언 v1
+        document.write(v1)
+        document.write('<br>')
+        var v2 = 111;
+        // v2 = 111;        // 2)
+        document.write(v2)  // 2) c, java.. 등 다른 언어에서는 오류 - 변수 선언 없이 사용 v2, v3
+        var v3 = '하하하'
+        // v3 = '하하하'    // 2)
+        document.write('<br>' + v3)
+        if(10>5) {
+            var v1 = 444;       // 3) 다른 언어에서는 { } 선언된 변수는 지역변수
+                                //                  -> 그러나 전역변수로 결과가 출력 -> let을 사용해야 지역변수
+            document.write('<br>' + v1)     //444
+            let v2 = 555;
+            // let v2 = 777;    // let은 var과 다르게 같은 변수명 중복 선언 x
+        }
+        document.write('<br>' + v1)         //444   ->  3)번 결과
+        document.write('<br>' + v2)         //  111?
+    </script>
+</body>
+</html>
+
+<!--
+/* 자바스크립트의 변수 선언 : var 
+    1. 데이터 타입 지정 안합니다.
+    2. 같은 변수이름을 중복해서 선언해도 오류 발생 안합니다.
+    3. {   } 블록 지역변수 적용이 안됩니다. 
+    4. 변수를 선언하지 않고도 사용해도 오류 발생 안합니다.
+    위의 해결방법으로 ES5부터 strict mode (엄격모드) 사용할 수 있습니다.
+    위의 해결방법으로 ES6(규격화된 자바스크립트버전)에서 let, const(상수) 키워드로 선언합니다.
+*/
+-->

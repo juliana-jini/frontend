@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsday1_배열</title>
+</head>
+<body>
+    <p id="twice"></p>
+    <hr>
+    <p id="kgroup"></p>
+    <script>
+        let arr1 = [11, 22, 44, 99, 55]     // 인덱스 0 ~ 4
+        console.log(arr1)
+        console.log(typeof arr1)
+        console.log(arr1[3])
+        arr1[2] = 77
+        console.log(arr1.sort())
+        console.log(arr1.reverse())
+        arr1[6] = 44
+        console.log(arr1)
+        arr1 = [1, 5, 6, 7];    // let 변수 이므로 객체 자체 변경 가능.
+
+        const arr2 = ['apple', 'mango', 'kiwi', 'banan', '딸기', '사과']    // 인덱스 0 ~ 5
+        console.log(arr2)
+        arr2[7] = '배'          // 기존 객체 변경은 가능
+        console.log(arr2)
+        // arr2 = ['abc', 'xyz']   // const이므로 객체 자체 변경은 못함. -> 오류
+
+        let arr3 = ['apple', 111, true, 'mango']        // 타입이 다른 데이터를 같은 배열에 저장 가능
+        console.log(arr3)
+
+        const arr4 = ['사나', '채영', '모모', '나연', '다현']
+        console.log(arr4)
+
+        let result = '<ul>'
+        for(let i=0; i<arr4.length; i++) {
+            // result += '<li>' = arr4[i] + '</li>'
+            result += `<li>${arr4[i]}</li>`    // 백틱 `와 표현식 기호 ${} 사용 (+연결연산 사용안함)
+        }
+        result += '</ul>'
+        document.getElementById('twice').innerHTML = result;
+
+        const arr5 = ['트와이스', 'nct', '에스파', 'viviz', 'blackpink']
+        result = '<ul>'
+        // for문에서 반복할 부분을 함수로 작성. forEach 함수 안에 들어가있는 fuction은 콜백함수라고 합니다.
+        // forEach의 인자는 함수. 함수의 인자로 사용되는 함수가 콜백함수입니다.
+        
+        // function(value, index, array) 이 순서는 forEach 주체가 arr5, 배열일때 정해진 순서
+        // 인자는 뒤에 index, array 코드에서 사용안할 때 생략할 수 있습니다.
+        arr5.forEach(function(value, index, array) {
+            result += `<li>${value}</li>`
+            // result += `<li>${array[index]}</li>`
+        });
+        result += '</ul>'
+        document.getElementById('kgroup').innerHTML = result;
+    </script>
+</body>
+</html>

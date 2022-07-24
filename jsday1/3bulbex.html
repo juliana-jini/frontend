@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsday1_onoff</title>
+</head>
+<body>
+    <h3>자바스크립트 기본 활용 </h3>
+    <p>
+        <ul>
+            <li>태그(요소)의 컨텐츠 변경 : innerHtml</li>
+            <li>태그(요소)의 속성값 변경 : 예를들면 img 태그의 src속성값 변경</li>
+            <li>태그(요소)의 스타일 변경 : 예를들면 글꼴의 색상변경</li>
+        </ul>
+        <!-- (img 태그 src 속성값을 변경하여 문서에 표시되는 이미지를 바꿉니다. 
+         참고 : innerHtml은 요소의 태그사이 컨텐츠를 변경합니다.) -->
+    </p>
+    <h4>현재상태: <span id="onoff">OFF</span></h4>
+    <hr>
+    <button onclick="lighton()">불을 켜주세요.</button>
+    <img src="../images/pic_bulboff.gif" alt="light" style="width: 100px; cursor: pointer;" 
+             id="light" onclick="toggle()">
+    <button onclick="lightoff()">불을 꺼주세요.</button>
+    <script>
+        // const는 상수. 실행중에 바뀌지 않는 값.
+        const img = document.getElementById('light')
+        const onoff = document.getElementById('onoff')
+        let state = false;      //boolean 값. OFF:false ON:true -> 전역변수
+
+        function toggle() {
+            if(state) {     // 상태 : ON
+                lightoff()
+                state = false
+            }else {         // 상태 : OFF
+                lighton()
+                state = true
+            }
+        }
+
+        function lighton() {
+            // ON, 이미지 바꾸기
+            img.src = "../images/pic_bulbon.gif"
+            onoff.innerHTML = "ON"
+            onoff.style.color = 'green'
+        }
+
+        function lightoff() {
+            img.src = "../images/pic_bulboff.gif"
+            onoff.innerHTML = "OFF"
+            onoff.style.color = 'black'
+        }
+    </script>
+</body>
+</html>
