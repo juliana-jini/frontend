@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        table {
+            width: 80%;
+        }
+        td {
+            border: 1px solid tomato;
+            width: 10%;
+            padding: 7px 12px;
+            text-align: center;
+        }
+        th {
+            width: 13%;
+            background-color: tomato;
+            color: white;
+            padding: 7px 12px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 오늘의 스케줄 -->
+    <table>
+        <tr id="time">
+            <!-- 시간 -->
+
+        </tr>
+        <tr id="todo">
+            <!-- 할일 -->
+        </tr>
+    </table>
+    <script>
+        const time = ['09:00', '11:00', '12:30', '14:00', '16:45']
+        const todo = ['수업', '과제', '점심식사', '주간회의', '자료조사']
+        
+        //자바스크립트 변수 특수기호 $, _ 사용가능
+        let _time = '<th>TIME</th>'
+        const ftime = function(value) {
+            _time += `<td>${value}</td>`
+        }
+        time.forEach(ftime)
+        document.getElementById('time').innerHTML=_time
+
+        let _todo = '<th>TODO</th>'
+        todo.forEach((value) => _todo += `<td>${value}</td>`);
+        document.getElementById('todo').innerHTML=_todo
+    </script>
+
+<!--
+    callback 함수 : 자바스크립트에서 많이 사용합니다.
+                함수 또는 메소드 안의 매개변수가 함수인 경우 그 매개변수로 쓰인함수가 콜백함수입니다.
+-->
+<h4>콜백함수 테스트</h4>
+<!-- location은 브라우저 객체 중 하나로 url 요청을 보냅니다. 
+    button의 onclick에는 자바스크립트 명령 쓰기. -->
+<button id="btn1" onclick="location.href='https://www.naver.com'">클릭하세요[1]</button><br>
+<button id="btn2" onclick="func_btn2()">클릭하세요[2]</button><br>
+<button id="btn3">클릭하세요[3]</button><br>
+<button id="btn4">클릭하세요[4]</button><br>
+<button id="btn5">클릭하세요[5Toggle]</button><br>
+    <p id="now"></p>
+
+<script>
+    const func_btn2 = function() {
+        alert('두번째 버튼 : 네이버로 이동합니다.')
+        location.href='https://www.naver.com'
+    }
+    //addEvenListener : html 요소에 발생하는 사용자 이벤트를 처리할 내용을 등록합니다.
+    //      이벤트 핸들러 : 이벤트를 처리할 내용(함수), 사용자 이벤트 : 클릭, 마우스 움직이기, 키보드 입력,..
+    document.getElementById('btn3').addEventListener('click',func_btn2)
+
+    const func_btn4 = function() {
+        document.getElementById('now').innerHTML = new Date();
+        //new Date()는 현재날짜시간객체 생성
+    }
+
+    // setInterval(func_btn4,1000);      //여기서 실행하면 웹페이지 실행시 바로 동작합니다.
+    let func_interval = setInterval(func_btn4,1000)    //setInterval 동작하면서, 그 실행을 변수로 참조
+                            //clearInterval을 위해서 어떤 Interval을 중지할 것인지 지정할 때 사용할 변수입니다.
+    //func_inteval()        //오류 : func_interval는 함수가 아닙니다.
+
+/*
+    document.getElementById('btn4').addEventListener('click',function() {
+        //1초마다 한번씩 func_btn4를 실행합니다.
+        //setInterval은 브라우저 window 객체의 메소드
+        setInterval(func_btn4,1000);       //시간단위 ms
+    })
+*/
+    document.getElementById('btn4').addEventListener('click',() => {
+        // setInterval(func_btn4,1000);
+        clearInterval(func_interval)     //setInterval 중지
+    })
+    //브라우저 객체 location, window 등은 node에서 실행 안됩니다.
+    //시간 표시 토글 가능 버튼
+    let state = true
+    const func_btn5 = function() {
+        if(state) {
+            alert('시간표시 해제')
+            state = false
+            clearInterval(func_interval)    //interval 설정이 제거
+        }else {
+            alert('시간표시 시작')
+            state = true
+            func_interval = setInterval(func_btn4,1000)     //위의 변수선언은 const 아닙니다. let으로 변경
+        }
+    }
+    document.getElementById('btn5').addEventListener('click',func_btn5)
+</script>
+
+</body>
+</html>
