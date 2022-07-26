@@ -19,7 +19,7 @@ console.log('result : ' + result);
 
 
 //2. 함수의 기본형식 : 리터럴 없이 선언하기, 함수이름을 사용
-//                 식별자선언이 생략된 형태이고 자동으로 함수이름을 식별자로 합니다.
+//       식별자선언이 생략된 형태이고 자동으로 함수이름을 식별자로 합니다.
 function myfunc2(y) {
     console.log('myfunc2입니다.');
     console.log('myfunc1에서 지정하지 않은 함수이름이 있습니다.')
