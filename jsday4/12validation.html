@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jsday4_유효성검사</title>
+</head>
+<body>
+    <!-- 유효성 검사 : form 입력요소 값들이 처리조건을 만족하는지 검사.
+        
+        form 태그 입력요소 또는 입력요소의 값을 가져오는 방법 
+var selectForm = document.forms[index];     //form 태그 많은 때 순서가 index
+var selectFormElement = document.forms[index].elements[index];
+                ㄴ elements[index]는 form 태그 내부의 입력요소들의 순서가 index
+var selectFormElementValue = selectFomrElement.value;       //value속성이 입력값입니다.
+var selectFormElementValue = document.forms[index].elements[index];
+
+    -->
+    <!-- document.forms[0] -->
+    <!-- action은 서버페이지로 작성해야 입력값을 처리할 수 있습니다. 테스트를 위해서 html -->
+    <form action="13result.html" onsubmit="return forms0_check()" name="frm0">
+        <!-- document.forms[0].elements[0] -->
+        <input type="text" name="user" placeholder="이름을 입력하세요."><br>
+        <!-- document.forms[0].elements[1] -->
+        <input type="text" name="email" placeholder="이메일을 입력하세요.">
+        <!-- form 태그 안의 버튼 type=submit-->
+        <button>전송1</button> <!-- onsubmit="return forms0_check()" 동작시킬때 -->
+        <button value="forms[0] button" onclick="btn_check()" type="button">전송2</button>
+    </form>
+    <!-- document.forms[1] -->
+    <form action="" id="momo">
+        <button onclick="alert(document.forms[1].id)">테스트1</button>
+    </form>
+    <!-- document.forms[2] -->
+    <form action="" id="sana">
+        <button>테스트2</button>
+    </form>
+
+    <script>
+        // 유효성 검사 : 프론트엔드에서 서버로 보내기 전에 해야합니다.
+        // 아래 2개 함수는 유효성 검사할 함수입니다.
+        // 유효성 검사 통과하면 제출, 통과하지 못하면 다시 입력
+        function forms0_check() {   //forms의 onsubmit이 실행하는 함수(버튼 type=submit)
+            alert('1.forms, elements 객체 사용하기')
+            const user = document.forms[0].elements[0]
+            const email = document.forms[0].elements[1]
+            const btn = document.forms[0].elements[3].value
+            alert('user : ' + user.value)
+            alert('email : ' + email.value)
+            alert('btn : ' + btn)
+            return false     //forms의 action으로 제출(이동), return false는 제출 안함
+        }
+
+        function btn_check() {      //type=button이 실행하는 함수
+            alert('2.name 속성으로 요소 또는 값 사용하기')    //type=button으로 form 제출
+            const user = document.frm0.user         //document.forms[0].user도 가능
+            const email = document.frm0.email
+            alert('user : ' + user.value)
+            alert('email : ' + email.value)
+     //       document.forms[0].action = '13result.html'
+     //       document.forms[0].submit()      //submit() 함수로 폼 제출
+        }
+    </script>
+</body>
+</html>
